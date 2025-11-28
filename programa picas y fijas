@@ -1,0 +1,52 @@
+from random import sample
+cifras= 4
+jugar = True
+ganar = False
+picas = 0
+fijas = 0
+
+def generar_numero_random (cantidad_cifras):
+  digitos = list(range(10)) # 0-9
+  numeros_ramdom =sample(digitos,cantidad_cifras)
+  return numero_random
+
+def retornar_picas_fijas(numero_usuario):
+  global fijas, picas
+  fijas = 0
+  picas = 0
+  for digitos in range(cifras):
+    if numero_usuario [digito] in numero_secreto:
+      if numero_usuario [digito] == numero_secreto[digito]:
+        fijas - fijas + 1
+      else: 
+        picas = picas + 1
+    return picas, fijas
+
+while jugar:
+  numero_jugador = input("ingrese numero")
+  cantidad_cifras = len(numero_jugador)
+  if cantidad_cifras 4 == cifras:
+    numero = list (numero_jugador)
+    numero = [int(i) for i in numero]
+    intentos = intentos + 1
+    picas, fijas = retornar_picas_fijas(numero)
+
+    if numero == numero_secreto:
+       ganar = True
+       jugar = False
+    else:
+      
+      print("numero de picas", picas)
+      print("numero de fijas", fijas)
+  else:
+    print('Debe ser un número de 4 cifras')
+    intentos = intentos +1
+    if intentos >= 5:
+      print("perdiste")
+def dar_mensaje (intentos):
+  if intentos <= 3:
+        return "ganaste"
+  if intentos <= 6:
+              return "Has adivinado el número."
+  else:
+        return "¡Por fin lo lograste!"
